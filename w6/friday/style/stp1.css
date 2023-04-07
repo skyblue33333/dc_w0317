@@ -8,7 +8,7 @@ body {
 }
 
 .section {
-    background-color: red;
+    /* background-color: red; */
 }
 
 .container {
@@ -16,12 +16,12 @@ body {
     margin-inline: auto;  
     padding-inline: 24px;
     max-width: calc(1000px + 2 * var(--anyname)); 
-    background-color: green;
+    /* background-color: green; */
 }
 
 .wrapper {
     padding-block: 64px;
-    background-color: blue;
+    /* background-color: blue; */
 
 }
 

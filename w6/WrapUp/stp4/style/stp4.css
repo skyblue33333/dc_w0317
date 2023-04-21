@@ -62,9 +62,3 @@ body {
   display: flex;
   flex-direction: column;
 }
-
-.button--type-text {
-  background-color: unset;
-  color: slateblue;
-  padding-inline: 0;
-}

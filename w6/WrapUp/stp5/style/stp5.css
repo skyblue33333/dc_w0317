@@ -58,13 +58,28 @@ body {
   padding-inline: 0;
 }
 
+#hero1 {
+  text-align: center;
+}
+#hero1 .button {
+  margin-inline: auto;
+}
+#hero1 .main__text {
+  margin-bottom: 24px;
+  max-width: 600px;
+  margin-inline: auto;
+}
+#hero1 .main__media {
+  aspect-ratio: 16/9;
+  background-color: aliceblue;
+}
 #hero1 .wrapper {
   display: flex;
   flex-direction: column;
 }
-
-.button--type-text {
-  background-color: unset;
-  color: slateblue;
-  padding-inline: 0;
+#hero1 h2 {
+  margin-bottom: 16px;
+}
+#hero1 p {
+  margin-bottom: 24px;
 }

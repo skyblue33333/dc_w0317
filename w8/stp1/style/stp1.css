@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: black;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.wrapper {
+  padding-block: 64px;
+}
+
+.nav {
+  color: black;
+  font-weight: 700;
+}
+.nav .container {
+  background-color: rgb(203, 231, 255);
+}
+.nav .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-block: 12px;
+}
+.nav__menuWrapper {
+  display: flex;
+  gap: 64px;
+  align-items: baseline;
+}
+
+.button {
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: rgb(98, 182, 255);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 700;
+  text-align: center;
+}
+
+#hero1 {
+  text-align: center;
+}
+#hero1 .button {
+  margin-inline: auto;
+}

@@ -540,5 +540,6 @@ body {
 @container footer (width<810px) {
   .footer .wrapper {
     grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
   }
 }

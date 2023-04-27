@@ -206,7 +206,6 @@ body {
     }
   }
 }
-
 .footer {
   font-size: 0.875rem;
   background-color: grey;
@@ -253,4 +252,8 @@ body {
       grid-template-columns: 1fr 1fr 1fr;
     ]
   }
+}
+
+.footer {
+  background-color: bisque;
 }

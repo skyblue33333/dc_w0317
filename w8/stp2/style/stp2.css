@@ -539,6 +539,6 @@ body {
 }
 @container footer (width<810px) {
   .footer .wrapper {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 }

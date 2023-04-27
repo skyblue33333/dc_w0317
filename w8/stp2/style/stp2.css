@@ -26,12 +26,18 @@ body {
 }
 #hero2 h1 {
   font-size: 32px;
-  padding-bottom: 18px;
+  padding-bottom: 22px;
+}
+#hero2 h3 {
+  font-size: 20px;
+  padding-bottom: 8px;
+  color: rgb(88, 88, 88);
 }
 
 .nav {
   color: black;
   font-weight: 700;
+  font-size: 14px;
   container-type: inline-size;
   container-name: nav;
 }
@@ -70,18 +76,23 @@ body {
   color: black;
   font-weight: 700;
 }
+.nav .button:hover {
+  color: rgb(222, 249, 240);
+  font-weight: 700;
+}
 @container nav (width < 42.5rem) {
   .nav__menuWrapper1 {
     display: none;
   }
-  .nav .lt680px {
-    display: unset;
+  .nav .button {
+    justify-content: flex-end;
   }
 }
 
 .nav2 {
   color: black;
-  background-color: rgb(239, 255, 209);
+  font-size: 15px;
+  background-color: rgb(237, 255, 204);
   font-weight: 700;
   container-type: inline-size;
   container-name: nav2;
@@ -101,6 +112,8 @@ body {
   margin: auto;
   background-color: hsla(0, 0%, 100%, 0);
   transition: background-color 300ms;
+  width: 130px;
+  height: auto;
 }
 .nav2__menuWrapper {
   display: flex;
@@ -113,14 +126,24 @@ body {
   align-items: center;
 }
 .nav2 .lt680px {
+  padding: 6px 16px;
+  font-weight: 500;
+  border-radius: 8px;
+  color: white;
+  background-color: rgb(61, 160, 114);
   display: none;
+  align-items: right;
 }
 @container nav2 (width <42.5rem) {
   .nav2__menuWrapper {
     display: none;
   }
+  .nav2__menuWrapper2 {
+    display: none;
+  }
   .nav2 .lt680px {
     display: unset;
+    text-align: right;
   }
 }
 
@@ -170,7 +193,6 @@ body {
 }
 
 .main__media {
-  background-color: rgb(230, 255, 218);
   overflow: hidden;
 }
 .main__media img {
@@ -254,11 +276,12 @@ body {
 }
 #hero3 h1 {
   font-size: 24px;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 #hero3 p {
-  margin-bottom: 24px;
-  max-width: 36ch;
+  margin-bottom: 48px;
+  max-width: 44ch;
+  line-height: 26px;
 }
 @media (width < 53.125rem) {
   #hero3 .wrapper {
@@ -303,11 +326,12 @@ body {
 }
 #hero4 h1 {
   font-size: 24px;
-  margin-block: 16px;
+  margin-bottom: 20px;
 }
 #hero4 p {
-  margin-bottom: 24px;
-  max-width: 38ch;
+  margin-bottom: 48px;
+  max-width: 42ch;
+  line-height: 26px;
 }
 @media (width < 53.125rem) {
   #hero4 .wrapper {
@@ -339,6 +363,10 @@ body {
 #hero5 .wrapper > * {
   flex: 1;
 }
+#hero5 .main__media {
+  display: flex;
+  gap: 12px;
+}
 #hero5 .main__media__img {
   aspect-ratio: 4/3;
   width: 100%;
@@ -348,11 +376,12 @@ body {
 }
 #hero5 h1 {
   font-size: 24px;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 #hero5 p {
-  margin-bottom: 24px;
-  max-width: 38ch;
+  margin-bottom: 48px;
+  max-width: 42ch;
+  line-height: 26px;
 }
 @media (width < 53.125rem) {
   #hero5 .wrapper {
@@ -381,6 +410,10 @@ body {
 #hero6 .wrapper > * {
   flex: 1;
 }
+#hero6 .main__media {
+  display: flex;
+  gap: 12px;
+}
 #hero6 .main__media__img {
   aspect-ratio: 4/3;
   width: 100%;
@@ -390,11 +423,12 @@ body {
 }
 #hero6 h1 {
   font-size: 24px;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 #hero6 p {
-  margin-bottom: 24px;
-  max-width: 40ch;
+  margin-bottom: 48px;
+  max-width: 44ch;
+  line-height: 26px;
 }
 @media (width < 53.125rem) {
   #hero6 .wrapper {
@@ -435,11 +469,12 @@ body {
 }
 #hero7 h1 {
   font-size: 24px;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 #hero7 p {
-  margin-bottom: 24px;
+  margin-bottom: 48px;
   max-width: 38ch;
+  line-height: 26px;
 }
 @media (width < 53.125rem) {
   #hero7 .wrapper {
@@ -477,14 +512,17 @@ body {
 .footer svg {
   fill: rgb(215, 215, 215);
 }
+.footer img {
+  width: 150px;
+  height: auto;
+}
 .footer .wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 .footer h2 {
   font-size: 1rem;
-  margin-top: 0.25rem;
   margin-bottom: 1rem;
 }
 .footer li {
@@ -501,6 +539,6 @@ body {
 }
 @container footer (width<44.375rem) {
   .footer .wrapper {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }

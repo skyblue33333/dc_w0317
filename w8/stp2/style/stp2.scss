@@ -89,7 +89,7 @@ body {
     font-weight: 700;
   }
 
-  @container nav (width < 42.5rem) {
+  @container nav (width < 810px) {
     &__menuWrapper1 {
       display: none;
     }
@@ -147,7 +147,7 @@ body {
     display: none;
     align-items: right;
   }
-  @container nav2 (width <42.5rem) {
+  @container nav2 (width <810px) {
     &__menuWrapper {
       display: none;
     }
@@ -555,7 +555,7 @@ body {
     fill: rgb(215, 215, 215);
   }
   img {
-    width: 150px;
+    width: 120px;
     height: auto;
   }
   .wrapper {
@@ -579,7 +579,7 @@ body {
     align-items: center;
     margin-bottom: 0.5rem;
   }
-  @container footer (width<44.375rem) {
+  @container footer (width<810px) {
     .wrapper {
       grid-template-columns: 1fr 1fr 1fr;
     }

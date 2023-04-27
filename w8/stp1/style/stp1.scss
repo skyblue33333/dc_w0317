@@ -206,3 +206,51 @@ body {
     }
   }
 }
+
+.footer {
+  font-size: 0.875rem;
+  background-color: grey;
+  color: white;
+  container-type: inline-size;
+  container-name: footer;
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  li {
+    list-style: none;
+  }
+  svg {
+    fill: white;
+  }
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 1.5rem;
+  }
+  h2 {
+    font-size: 1rem;
+    margin-top:0.25rem;
+    margin-bottom: 1rem;
+  }
+  li {
+    margin-bottom: 0.5rem;
+  }
+  &__logo {
+    margin-bottom: 0.75rem;
+  }
+  &__extLinkWrap {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+  @container footer (width<44.375rem) {
+    .column:first-of-type {
+      grid-row: 1 / span 2;
+    }
+    .wrapper [
+      grid-template-columns: 1fr 1fr 1fr;
+    ]
+  }
+}

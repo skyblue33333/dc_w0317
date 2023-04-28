@@ -80,7 +80,7 @@ body {
   color: rgb(222, 249, 240);
   font-weight: 700;
 }
-@container nav (width < 810px) {
+@container nav (width < 1080px) {
   .nav__menuWrapper1 {
     display: none;
   }
@@ -141,7 +141,7 @@ body {
   display: none;
   align-items: right;
 }
-@container nav2 (width <810px) {
+@container nav2 (width < 1080px) {
   .nav2__menuWrapper {
     display: none;
   }

@@ -89,7 +89,7 @@ body {
     font-weight: 700;
   }
 
-  @container nav (width < 810px) {
+  @container nav (width < 1080px) {
     &__menuWrapper1 {
       display: none;
     }
@@ -154,7 +154,7 @@ body {
     display: none;
     align-items: right;
   }
-  @container nav2 (width <810px) {
+  @container nav2 (width < 1080px) {
     &__menuWrapper {
       display: none;
     }

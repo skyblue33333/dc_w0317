@@ -120,6 +120,13 @@ body {
   gap: 40px;
   align-items: center;
 }
+.nav2__menuWrapper a {
+  text-decoration: none;
+  color: black;
+}
+.nav2__menuWrapper li {
+  list-style: none;
+}
 .nav2__menuWrapper2 {
   display: flex;
   gap: 8px;

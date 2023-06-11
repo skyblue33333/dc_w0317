@@ -1,6 +1,18 @@
+@import "theme.dark.css"
+  (prefers-color-scheme: dark);
+@import "theme.light.css"
+  (prefers-color-scheme: light);
+
 $wrapper-padding-inline: 2rem;
 $min-height: 2rem;
 $progressBar-height: 1rem;
+$bg: var(--bg);
+$bgVariant: var(--bgVariant);
+$txt: var(--txt);
+$surface-transparent: var(--surface-transparent);
+$surface: var(--surface);
+$onSurface: var(--onSurface);
+$accent: var(--accent);
 
 *,
 *::before,
@@ -22,6 +34,8 @@ body {
   font-family: system-ui;
   font-size: 1.125rem;
   line-height: 1.5;
+  background: $bg;
+  color: $txt;
 }
 
 .wrapper {
@@ -46,7 +60,7 @@ header {
 
 //nth-child 도 있으니 온라인 검색해서 그 차이 알아보기
 section:nth-of-type(odd) {
-  background-color: cadetblue;
+  background-color: $bgVariant;
 }
 
 .stickyWrapper {
@@ -69,10 +83,10 @@ aside {
   grid-column: 1;
   grid-row: 1;
   width: fit-content;
-  height: max(100dvh, 25rem);
-  padding-inline: 16px 24px;
+  height: max(100dvh, $min-height);
+  padding-inline: 1rem 1.5rem;
   border-radius: 0 1rem 1rem 0;
-  background-color: rgba(0 0 0 / 50%);
+  background-color: $surface-transparent;
   font-size: 0.875rem;
   backdrop-filter: blur(0.25rem);
 
@@ -89,18 +103,26 @@ aside {
       display: flex;
       align-items: center;
       justify-content: center;
-      color: white;
+      color: $onSurface;
       font-weight: 600;
       text-transform: capitalize;
       gap: 0.75rem;
+      transition: color 150ms ease-out;
 
       &::before {
         content: "";
         width: 1rem;
         height: 1rem;
         margin-top: 0.125rem;
-        border: 0.125rem solid white;
+        border: 0.125rem solid $onSurface;
         border-radius: 999999999px;
+        transition: border-color 150ms ease-out;
+      }
+      &:hover {
+        color: $accent;
+        &::before {
+          border-color: $accent;
+        }
       }
     }
   }
@@ -118,20 +140,20 @@ aside {
   grid-row: 1;
   width: 100%;
   height: $progressBar-height;
-  background-color: rgba(64 64 64);
+  background-color: $surface;
 
   .indicator {
     position: absolute;
     // transform: scaleX(100%)
     transform-origin: left;
-    background-color: blue;
+    background-color: $accent;
     inset: 0;
   }
 }
 
 footer {
   .wrapper {
-    min-height: max(100dvh, 50rem);
+    min-height: max(100dvh, $min-height);
   }
 }
 

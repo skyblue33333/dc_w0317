@@ -1,3 +1,7 @@
+$wrapper-padding-inline: 2rem;
+$min-height: 2rem;
+$progressBar-height: 1rem;
+
 *,
 *::before,
 *::after {
@@ -21,15 +25,17 @@ body {
 }
 
 .wrapper {
-  $padding-inline: 2rem;
+  $wrapper-padding-inline: 2rem;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: calc(80ch + 2 * $padding-inline);
+  max-width: calc(
+    80ch + 2 * $wrapper-padding-inline
+  );
   min-height: max(50dvh, 25rem);
   margin-inline: auto;
-  padding-inline: $padding-inline;
+  padding-inline: $wrapper-padding-inline;
 }
 
 header {
@@ -111,14 +117,14 @@ aside {
   grid-column: 1 / span 2;
   grid-row: 1;
   width: 100%;
-  height: 1rem;
+  height: $progressBar-height;
   background-color: rgba(64 64 64);
 
   .indicator {
     position: absolute;
-
+    // transform: scaleX(100%)
     transform-origin: left;
-    background-color: white;
+    background-color: blue;
     inset: 0;
   }
 }
@@ -126,5 +132,64 @@ aside {
 footer {
   .wrapper {
     min-height: max(100dvh, 50rem);
+  }
+}
+
+@media (width < 67.5rem) {
+  .stickyWrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr;
+  }
+
+  main {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  aside {
+    top: $progressBar-height;
+    grid-column: 1;
+    grid-row: 3;
+    width: 100%;
+    height: fit-content;
+    padding-block: 1rem;
+    padding-inline: unset;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    border-radius: 0 0 1rem 1rem;
+
+    ol {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 3rem;
+
+      a:first-of-type li {
+        margin-left: $wrapper-padding-inline;
+      }
+
+      a:last-of-type li {
+        margin-right: $wrapper-padding-inline;
+      }
+    }
+  }
+
+  .progressBar {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+  }
+}
+
+@media (width < 59.1875rem) {
+  aside {
+    ol {
+      justify-content: flex-start;
+    }
   }
 }

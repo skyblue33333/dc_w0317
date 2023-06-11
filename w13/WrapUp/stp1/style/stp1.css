@@ -112,10 +112,59 @@ aside a {
 .progressBar .indicator {
   position: absolute;
   transform-origin: left;
-  background-color: white;
+  background-color: blue;
   inset: 0;
 }
 
 footer .wrapper {
   min-height: max(100dvh, 50rem);
+}
+
+@media (width < 67.5rem) {
+  .stickyWrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr;
+  }
+  main {
+    grid-column: 1;
+    grid-row: 3;
+  }
+  aside {
+    top: 1rem;
+    grid-column: 1;
+    grid-row: 3;
+    width: 100%;
+    height: -moz-fit-content;
+    height: fit-content;
+    padding-block: 1rem;
+    padding-inline: unset;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    border-radius: 0 0 1rem 1rem;
+  }
+  aside::-webkit-scrollbar {
+    display: none;
+  }
+  aside ol {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 3rem;
+  }
+  aside ol a:first-of-type li {
+    margin-left: 2rem;
+  }
+  aside ol a:last-of-type li {
+    margin-right: 2rem;
+  }
+  .progressBar {
+    grid-column: 1/span 2;
+    grid-row: 1;
+  }
+}
+@media (width < 59.1875rem) {
+  aside ol {
+    justify-content: flex-start;
+  }
 }

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link
+      rel="stylesheet"
+      href="style/style.css"
+    />
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
+    <title>w11-WrapUp-stp3</title>
+  </head>
+  <body>
+    <div class="section">
+      <div class="container">
+        <h2>로띠 예제</h2>
+      </div>
+    </div>
+    <div class="section">
+      <div class="container">
+        <lottie-player
+          class="lottie"
+          src="https://assets4.lottiefiles.com/packages/lf20_PnlCwoqh13.json"
+          background="transparent"
+          speed="1"
+          loop
+          autoplay
+        ></lottie-player>
+      </div>
+    </div>
+    <div class="section">
+      <div class="container">
+        <h2>로띠 hover</h2>
+      </div>
+    </div>
+    <div class="section">
+      <div class="container">
+        <lottie-player
+          class="lottie"
+          src="https://assets4.lottiefiles.com/packages/lf20_PnlCwoqh13.json"
+          background="transparent"
+          speed="1"
+          loop
+          hover
+        ></lottie-player>
+      </div>
+    </div>
+    <div class="section">
+      <div class="container">
+        <h2>로띠 고급: scroll</h2>
+      </div>
+    </div>
+    <div class="section">
+      <div class="container">
+        <lottie-player
+          id="lottie3"
+          class="lottie"
+          src="https://assets4.lottiefiles.com/packages/lf20_PnlCwoqh13.json"
+          >"></lottie-player
+        >
+      </div>
+    </div>
+    <div class="section">
+      <div class="container">
+        <h2>로띠 고급: onclick</h2>
+      </div>
+    </div>
+    <div class="section">
+      <div class="container">
+        <lottie-player
+          id="lottie4"
+          class="lottie"
+          src="https://assets4.lottiefiles.com/packages/lf20_PnlCwoqh13.json"
+          style="width: 400px; height: 400px"
+          >"></lottie-player
+        >
+      </div>
+    </div>
+    <div class="section">
+      <div class="container">
+        <h2>끝</h2>
+      </div>
+    </div>
+  </body>
+  <script>
+    LottieInteractivity.create({
+      mode: "scroll",
+      player: "#lottie3",
+      actions: [
+        {
+          visibility: [0, 1],
+          type: "seek",
+          frames: [0, 150],
+        },
+      ],
+    });
+    LottieInteractivity.create({
+      player: "#lottie4",
+      mode: "cursor",
+      actions: [
+        {
+          type: "click",
+          forceFlag: false,
+        },
+      ],
+    });
+  </script>
+</html>

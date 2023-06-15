@@ -15,9 +15,13 @@ html {
 }
 
 body {
+  overflow-x: hidden;
+  width: 100vw;
+  height: 100dvh;
   margin: 0;
   font-family: system-ui;
   font-size: 1.0625rem;
+  font-weight: 500;
   line-height: 1.6;
   background: var(--bg);
   color: var(--txt);
@@ -50,7 +54,6 @@ main::-webkit-scrollbar {
   content: "";
   height: 1px;
   width: 100%;
-  background-color: fuchsia;
   position: absolute;
   top: 25%;
 }
@@ -82,6 +85,13 @@ header {
   text-wrap: balance;
   word-break: keep-all;
 }
+header h1.animTarget {
+  transform: translateY(-100vh);
+  transition: color 500ms ease-out, transform 500ms ease-out;
+}
+header.triggered h1.animTarget {
+  transform: translateY(0);
+}
 
 .wrapper1 {
   display: flex;
@@ -89,19 +99,15 @@ header {
   justify-content: center;
   align-items: center;
   max-width: calc(63ch + 4rem);
-  background-color: var(--bgCha);
   margin: auto;
 }
 
 #character__title {
-  padding-block: 6rem 1rem;
+  padding-block: 9rem 1rem;
 }
-#character__title h1.animTarget {
-  transform: translateY(-100vh);
-  transition: color 500ms ease-out, transform 500ms ease-out;
-}
-#character__title.triggered h1.animTarget {
-  transform: translateY(0);
+#character__title h1 {
+  font-size: 2.5rem;
+  color: rgb(115, 64, 140);
 }
 
 #character {
@@ -183,6 +189,38 @@ svg,
 video {
   max-width: 100%;
   display: block;
+}
+
+#section-start {
+  background-color: var(--bgCha);
+}
+#section-start #card1.animTarget {
+  transform: translateX(-100vw);
+  transition: transform 700ms ease-in-out;
+}
+#section-start #card2.animTarget {
+  transform: translateX(100vw);
+  transition: transform 700ms ease-in-out;
+}
+#section-start #card3.animTarget {
+  transform: translateX(-100vw);
+  transition: transform 700ms ease-in-out;
+}
+#section-start #card4.animTarget {
+  transform: translateX(100vw);
+  transition: transform 700ms ease-in-out;
+}
+#section-start.triggered #card1.animTarget {
+  transform: translateX(0);
+}
+#section-start.triggered #card2.animTarget {
+  transform: translateX(0);
+}
+#section-start.triggered #card3.animTarget {
+  transform: translateX(0);
+}
+#section-start.triggered #card4.animTarget {
+  transform: translateX(0);
 }
 
 #section1 p.animTarget {
@@ -322,7 +360,7 @@ video {
 aside {
   position: sticky;
   z-index: 3;
-  top: 0;
+  top: 0.5rem;
   grid-column: 1;
   grid-row: 1;
   width: -moz-fit-content;
@@ -401,6 +439,19 @@ aside a {
 
 footer .wrapper {
   min-height: max(100dvh, 28rem);
+}
+footer .wrapper .button {
+  align-items: center;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  border: 0.0625rem;
+  border-color: rgba(10, 197, 144, 0.751);
+  color: rgba(3, 220, 159, 0.751);
+  border-radius: 0.75rem;
+}
+footer .wrapper .button:hover {
+  background-color: rgba(3, 220, 159, 0.751);
+  color: white;
 }
 
 @media (width < 67.5rem) {

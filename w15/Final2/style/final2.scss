@@ -32,12 +32,13 @@ html {
 }
 
 body {
-  // overflow-y: hidden;
-  // width: 100vw;
-  // height: 100dvh;
+  overflow-x: hidden;
+  width: 100vw;
+  height: 100dvh;
   margin: 0;
   font-family: system-ui;
   font-size: 1.0625rem;
+  font-weight: 500;
   line-height: 1.6;
   background: $bg;
   color: $txt;
@@ -70,7 +71,7 @@ main {
     content: "";
     height: 1px;
     width: 100%;
-    background-color: fuchsia;
+    // background-color: fuchsia;
     position: absolute;
     top: 25%;
   }
@@ -106,6 +107,16 @@ header {
   text-align: center;
   text-wrap: balance;
   word-break: keep-all;
+  h1.animTarget {
+    transform: translateY(-100vh);
+    transition: color 500ms ease-out,
+      transform 500ms ease-out;
+  }
+  &.triggered {
+    h1.animTarget {
+      transform: translateY(0);
+    }
+  }
 }
 
 .wrapper1 {
@@ -116,21 +127,15 @@ header {
   max-width: calc(
     63ch + 2 * $wrapper-padding-inline
   );
-  background-color: $bgCha;
+
   margin: auto;
 }
 
 #character__title {
-  padding-block: 6rem 1rem;
-  h1.animTarget {
-    transform: translateY(-100vh);
-    transition: color 500ms ease-out,
-      transform 500ms ease-out;
-  }
-  &.triggered {
-    h1.animTarget {
-      transform: translateY(0);
-    }
+  padding-block: 9rem 1rem;
+  h1 {
+    font-size: 2.5rem;
+    color: rgb(115, 64, 140);
   }
 }
 
@@ -216,6 +221,40 @@ svg,
 video {
   max-width: 100%;
   display: block;
+}
+
+#section-start {
+  background-color: $bgCha;
+  #card1.animTarget {
+    transform: translateX(-100vw);
+    transition: transform 700ms ease-in-out;
+  }
+  #card2.animTarget {
+    transform: translateX(100vw);
+    transition: transform 700ms ease-in-out;
+  }
+  #card3.animTarget {
+    transform: translateX(-100vw);
+    transition: transform 700ms ease-in-out;
+  }
+  #card4.animTarget {
+    transform: translateX(100vw);
+    transition: transform 700ms ease-in-out;
+  }
+  &.triggered {
+    #card1.animTarget {
+      transform: translateX(0);
+    }
+    #card2.animTarget {
+      transform: translateX(0);
+    }
+    #card3.animTarget {
+      transform: translateX(0);
+    }
+    #card4.animTarget {
+      transform: translateX(0);
+    }
+  }
 }
 
 #section1 {
@@ -406,7 +445,7 @@ video {
 aside {
   position: sticky;
   z-index: 3;
-  top: 0;
+  top: $progressBar-height;
   grid-column: 1;
   grid-row: 1;
   width: fit-content;
@@ -492,6 +531,24 @@ aside {
 footer {
   .wrapper {
     min-height: max(100dvh, $min-height);
+    .button {
+      align-items: center;
+      text-align: center;
+      padding: 0.5rem 1rem;
+      border: 0.0625rem;
+      border-color: rgba(10, 197, 144, 0.751);
+      color: rgba(3, 220, 159, 0.751);
+      border-radius: 0.75rem;
+      &:hover {
+        background-color: rgba(
+          3,
+          220,
+          159,
+          0.751
+        );
+        color: white;
+      }
+    }
   }
 }
 

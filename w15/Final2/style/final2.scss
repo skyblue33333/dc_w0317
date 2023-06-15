@@ -342,10 +342,6 @@ video {
     transition: transform 500ms ease-out;
   }
   &.triggered {
-    .content.animTarget {
-      background-color: cornflowerblue;
-      border: 0px solid transparent;
-    }
     h2.animTarget {
       transform: translateX(0);
     }
@@ -558,6 +554,7 @@ footer {
   }
 
   .stickyWrapper {
+    overflow-x: hidden;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto 1fr;
   }

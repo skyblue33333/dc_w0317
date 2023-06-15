@@ -289,10 +289,6 @@ video {
   transform: translateX(100vw);
   transition: transform 500ms ease-out;
 }
-#section5.triggered .content.animTarget {
-  background-color: cornflowerblue;
-  border: 0px solid transparent;
-}
 #section5.triggered h2.animTarget {
   transform: translateX(0);
 }
@@ -461,6 +457,7 @@ footer .wrapper .button:hover {
     grid-template-columns: 1fr;
   }
   .stickyWrapper {
+    overflow-x: hidden;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto 1fr;
   }

@@ -40,13 +40,11 @@ body {
   font-size: 1.0625rem;
   font-weight: 500;
   line-height: 1.6;
-  background: $bg;
   color: $txt;
   &::after {
     content: "";
     height: 1px;
     width: 100%;
-
     position: fixed;
     bottom: 200px;
   }

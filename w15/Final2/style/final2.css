@@ -12,24 +12,35 @@
 
 html {
   color-scheme: light dark;
-  scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
   font-family: system-ui;
-  font-size: 1.125rem;
+  font-size: 1.0625rem;
   line-height: 1.6;
   background: var(--bg);
   color: var(--txt);
+}
+body::after {
+  content: "";
+  height: 1px;
+  width: 100%;
+  position: fixed;
+  bottom: 200px;
 }
 
 main {
   z-index: 1;
   grid-column: 1/span 2;
   grid-row: 1;
+  width: 100%;
+  height: 100%;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
+}
+main::-webkit-scrollbar {
+  display: none;
 }
 
 .animTrigger {
@@ -41,7 +52,7 @@ main {
   width: 100%;
   background-color: fuchsia;
   position: absolute;
-  top: 75%;
+  top: 25%;
 }
 
 section {
@@ -50,13 +61,20 @@ section {
 }
 
 .wrapper {
+  margin-top: 4rem;
+  margin-bottom: 10rem;
+  margin-inline: auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
+  align-items: center;
   max-width: calc(63ch + 4rem);
-  min-height: max(50dvh, 2rem);
-  margin-inline: auto;
+  min-height: max(800px, 100dvh);
   padding-inline: 2rem;
+}
+
+.content {
+  border: 1px solid red;
 }
 
 header {
@@ -69,14 +87,21 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   max-width: calc(63ch + 4rem);
   background-color: var(--bgCha);
-  padding-top: 2rem;
-  margin: 2rem;
+  margin: auto;
 }
 
-.content {
-  border: 1px solid red;
+#character__title {
+  padding-block: 6rem 1rem;
+}
+#character__title h1.animTarget {
+  transform: translateY(-100vh);
+  transition: color 500ms ease-out, transform 500ms ease-out;
+}
+#character__title.triggered h1.animTarget {
+  transform: translateY(0);
 }
 
 #character {
@@ -86,13 +111,13 @@ header {
   padding-block: 2rem 3rem;
   row-gap: 3rem;
   margin-inline: auto;
+  margin-top: 0;
 }
 
 .card {
   cursor: pointer;
-  max-width: 15.625rem;
+  max-width: 16.875rem;
   margin-inline: auto;
-  border: 0.0625rem solid #ccc;
   border-radius: 0.5rem;
   background-color: var(--bgCard);
   overflow: hidden;
@@ -118,7 +143,7 @@ header {
 }
 .card__text h3 {
   font-size: 1.25rem;
-  line-height: 1.75rem;
+  line-height: 1.6rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
 }
@@ -145,6 +170,14 @@ section:nth-of-type(even) {
   grid-template-rows: 1fr;
 }
 
+.paragraph {
+  padding-block: 4rem;
+}
+
+.content__img {
+  padding-block: 2rem;
+}
+
 img,
 svg,
 video {
@@ -152,24 +185,138 @@ video {
   display: block;
 }
 
-#section1 .animTarget {
-  transform: scale(0);
+#section1 p.animTarget {
+  transform: translateY(300vh);
   transition: transform 500ms ease-in-out;
 }
-#section1.triggered .animTarget {
+#section1 .content__img.animTarget {
+  transform: scale(0);
+  transition: transform 300ms ease-out;
+}
+#section1 h2.animTarget {
+  transform: translateX(-100vw);
+  transition: transform 300ms ease-out;
+}
+#section1.triggered p.animTarget {
+  transform: translateY(0);
+}
+#section1.triggered .content__img.animTarget {
+  transform: scale(1);
+}
+#section1.triggered h2.animTarget {
+  transform: translateX(0);
+}
+
+#section2 .animTarget {
+  transform: scale(0);
+  transition: transform 500ms ease-out;
+}
+#section2.triggered .animTarget {
   transform: scale(1);
 }
 
-#section2 .content .animTarget {
-  transform: translateX(0);
-  transition: transform 500ms ease-in;
-}
-#section2 .content.triggered .animTarget {
+#section3 .content p.animTarget {
   transform: translateX(100vw);
+  transition: transform 500ms ease-out;
+}
+#section3 .content h2.animTarget {
+  transform: translateX(100vw);
+  transition: transform 300ms ease-out;
+}
+#section3 .content.triggered p.animTarget {
+  transform: translateX(0);
+}
+#section3 .content.triggered h2.animTarget {
+  transform: translateX(0);
 }
 
-.paragraph {
-  padding-block: 4rem;
+#section4 .animTarget {
+  transform: scale(0);
+  transition: transform 500ms ease-out;
+}
+#section4.triggered .animTarget {
+  transform: scale(1);
+}
+
+#section5 .content.animTarget {
+  transition: background-color 500ms ease-out, border 500ms ease-out;
+}
+#section5 h2.animTarget {
+  transform: translateX(-100vw);
+  transition: transform 500ms ease-out;
+}
+#section5 p.animTarget {
+  transform: translateX(100vw);
+  transition: transform 500ms ease-out;
+}
+#section5.triggered .content.animTarget {
+  background-color: cornflowerblue;
+  border: 0px solid transparent;
+}
+#section5.triggered h2.animTarget {
+  transform: translateX(0);
+}
+#section5.triggered p.animTarget {
+  transform: translateX(0);
+}
+
+#section6 .animTarget {
+  transform: scale(0);
+  transition: transform 500ms ease-out;
+}
+#section6.triggered .animTarget {
+  transform: scale(1);
+}
+
+#section7 .animTarget {
+  transform: scale(0);
+  transition: transform 500ms ease-out;
+}
+#section7.triggered .animTarget {
+  transform: scale(1);
+}
+
+#section8 .animTarget {
+  transform: scale(0);
+  transition: transform 500ms ease-out;
+}
+#section8.triggered .animTarget {
+  transform: scale(1);
+}
+
+#section9 .animTarget {
+  transform: scale(0);
+  transition: transform 500ms ease-out;
+}
+#section9.triggered .animTarget {
+  transform: scale(1);
+}
+
+#section10 lottie-player {
+  padding-left: 30px;
+}
+#section10 .animTarget {
+  transform: scale(0);
+  transition: transform 500ms ease-out;
+}
+#section10.triggered .animTarget {
+  transform: scale(1);
+}
+
+#section11 .animTarget {
+  transform: scale(0);
+  transition: transform 500ms ease-out;
+}
+#section11.triggered .animTarget {
+  transform: scale(1);
+}
+
+#section12 .animTarget {
+  transform: scale(0);
+  transition: transform 500ms ease-out;
+}
+#section12.triggered .animTarget {
+  transform: scale(1);
 }
 
 aside {
@@ -180,7 +327,7 @@ aside {
   grid-row: 1;
   width: -moz-fit-content;
   width: fit-content;
-  height: max(100dvh, 2rem);
+  height: max(100dvh, 28rem);
   padding-inline: 1rem 1.5rem;
   border-radius: 0 1rem 1rem 0;
   background-color: var(--surface-transparent);
@@ -199,8 +346,8 @@ aside ol {
 }
 aside ol li {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: start;
+  justify-content: start;
   color: var(--onSurface);
   font-weight: 600;
   text-transform: capitalize;
@@ -241,7 +388,7 @@ aside a {
   grid-column: 1/span 2;
   grid-row: 1;
   width: 100%;
-  height: 1rem;
+  height: 0.5rem;
   background-color: var(--surface);
 }
 .progressBar .indicator {
@@ -253,10 +400,13 @@ aside a {
 }
 
 footer .wrapper {
-  min-height: max(100dvh, 2rem);
+  min-height: max(100dvh, 28rem);
 }
 
 @media (width < 67.5rem) {
+  #character {
+    grid-template-columns: 1fr;
+  }
   .stickyWrapper {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto 1fr;
@@ -266,7 +416,7 @@ footer .wrapper {
     grid-row: 3;
   }
   aside {
-    top: 1rem;
+    top: 0.5rem;
     grid-column: 1;
     grid-row: 3;
     width: 100%;
@@ -285,7 +435,7 @@ footer .wrapper {
   aside ol {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 3rem;
   }
   aside ol a:first-of-type li {
@@ -300,6 +450,9 @@ footer .wrapper {
   }
 }
 @media (width < 59.1875rem) {
+  #character {
+    grid-template-columns: 1fr;
+  }
   aside ol {
     justify-content: flex-start;
   }

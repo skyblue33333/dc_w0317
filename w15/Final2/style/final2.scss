@@ -4,8 +4,9 @@
   (prefers-color-scheme: light);
 
 $wrapper-padding-inline: 2rem;
-$min-height: 2rem;
-$progressBar-height: 1rem;
+// $wrapper-padding-block: 128px;
+$min-height: 28rem;
+$progressBar-height: 0.5rem;
 $bg: var(--bg);
 $bgVariant: var(--bgVariant);
 $txt: var(--txt);
@@ -28,27 +29,39 @@ $bgCard: var(--bgCard);
 
 html {
   color-scheme: light dark;
-  scroll-behavior: smooth;
 }
 
 body {
+  // overflow-y: hidden;
   // width: 100vw;
   // height: 100dvh;
-  // overflow-y: hidden;
   margin: 0;
   font-family: system-ui;
-  font-size: 1.125rem;
+  font-size: 1.0625rem;
   line-height: 1.6;
   background: $bg;
   color: $txt;
+  &::after {
+    content: "";
+    height: 1px;
+    width: 100%;
+
+    position: fixed;
+    bottom: 200px;
+  }
 }
 
 main {
   z-index: 1;
   grid-column: 1 / span 2;
   grid-row: 1;
+  width: 100%;
+  height: 100%;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .animTrigger {
@@ -59,7 +72,7 @@ main {
     width: 100%;
     background-color: fuchsia;
     position: absolute;
-    top: 75%;
+    top: 25%;
   }
 }
 
@@ -69,15 +82,24 @@ section {
 }
 
 .wrapper {
+  margin-top: 4rem;
+  margin-bottom: 10rem;
+  margin-inline: auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
+  align-items: center;
   max-width: calc(
     63ch + 2 * $wrapper-padding-inline
   );
-  min-height: max(50dvh, $min-height);
-  margin-inline: auto;
+  min-height: max(800px, 100dvh);
   padding-inline: $wrapper-padding-inline;
+  //   padding-block: $wrapper-padding-block;
+}
+
+.content {
+  border: 1px solid red;
+  //   block-size: 31.25rem;
 }
 
 header {
@@ -90,16 +112,26 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   max-width: calc(
     63ch + 2 * $wrapper-padding-inline
   );
   background-color: $bgCha;
-  padding-top: 2rem;
-  margin: 2rem;
+  margin: auto;
 }
 
-.content {
-  border: 1px solid red;
+#character__title {
+  padding-block: 6rem 1rem;
+  h1.animTarget {
+    transform: translateY(-100vh);
+    transition: color 500ms ease-out,
+      transform 500ms ease-out;
+  }
+  &.triggered {
+    h1.animTarget {
+      transform: translateY(0);
+    }
+  }
 }
 
 #character {
@@ -109,13 +141,13 @@ header {
   padding-block: 2rem 3rem;
   row-gap: 3rem;
   margin-inline: auto;
+  margin-top: 0;
 }
 
 .card {
   cursor: pointer;
-  max-width: 15.625rem;
+  max-width: 16.875rem;
   margin-inline: auto;
-  border: 0.0625rem solid #ccc;
   border-radius: 0.5rem;
   background-color: $bgCard;
   overflow: hidden;
@@ -139,7 +171,7 @@ header {
     padding: 1rem;
     h3 {
       font-size: 1.25rem;
-      line-height: 1.75rem;
+      line-height: 1.6rem;
       font-weight: bold;
       margin-bottom: 0.5rem;
     }
@@ -171,6 +203,14 @@ section:nth-of-type(even) {
   grid-template-rows: 1fr;
 }
 
+.paragraph {
+  padding-block: 4rem;
+}
+
+.content__img {
+  padding-block: 2rem;
+}
+
 img,
 svg,
 video {
@@ -179,9 +219,35 @@ video {
 }
 
 #section1 {
+  p.animTarget {
+    transform: translateY(300vh);
+    transition: transform 500ms ease-in-out;
+  }
+  .content__img.animTarget {
+    transform: scale(0);
+    transition: transform 300ms ease-out;
+  }
+  h2.animTarget {
+    transform: translateX(-100vw);
+    transition: transform 300ms ease-out;
+  }
+  &.triggered {
+    p.animTarget {
+      transform: translateY(0);
+    }
+    .content__img.animTarget {
+      transform: scale(1);
+    }
+    h2.animTarget {
+      transform: translateX(0);
+    }
+  }
+}
+
+#section2 {
   .animTarget {
     transform: scale(0);
-    transition: transform 500ms ease-in-out;
+    transition: transform 500ms ease-out;
   }
   &.triggered {
     .animTarget {
@@ -190,22 +256,151 @@ video {
   }
 }
 
-#section2 {
+#section3 {
   .content {
-    .animTarget {
-      transform: translateX(0);
-      transition: transform 500ms ease-in;
+    p.animTarget {
+      transform: translateX(100vw);
+      transition: transform 500ms ease-out;
+    }
+    h2.animTarget {
+      transform: translateX(100vw);
+      transition: transform 300ms ease-out;
     }
     &.triggered {
-      .animTarget {
-        transform: translateX(100vw);
+      p.animTarget {
+        transform: translateX(0);
+      }
+      h2.animTarget {
+        transform: translateX(0);
       }
     }
   }
 }
 
-.paragraph {
-  padding-block: 4rem;
+#section4 {
+  .animTarget {
+    transform: scale(0);
+    transition: transform 500ms ease-out;
+  }
+  &.triggered {
+    .animTarget {
+      transform: scale(1);
+    }
+  }
+}
+
+#section5 {
+  .content.animTarget {
+    transition: background-color 500ms ease-out,
+      border 500ms ease-out;
+  }
+  h2.animTarget {
+    transform: translateX(-100vw);
+    transition: transform 500ms ease-out;
+  }
+  p.animTarget {
+    transform: translateX(100vw);
+    transition: transform 500ms ease-out;
+  }
+  &.triggered {
+    .content.animTarget {
+      background-color: cornflowerblue;
+      border: 0px solid transparent;
+    }
+    h2.animTarget {
+      transform: translateX(0);
+    }
+    p.animTarget {
+      transform: translateX(0);
+    }
+  }
+}
+
+#section6 {
+  .animTarget {
+    transform: scale(0);
+    transition: transform 500ms ease-out;
+  }
+  &.triggered {
+    .animTarget {
+      transform: scale(1);
+    }
+  }
+}
+
+#section7 {
+  .animTarget {
+    transform: scale(0);
+    transition: transform 500ms ease-out;
+  }
+  &.triggered {
+    .animTarget {
+      transform: scale(1);
+    }
+  }
+}
+
+#section8 {
+  .animTarget {
+    transform: scale(0);
+    transition: transform 500ms ease-out;
+  }
+  &.triggered {
+    .animTarget {
+      transform: scale(1);
+    }
+  }
+}
+
+#section9 {
+  .animTarget {
+    transform: scale(0);
+    transition: transform 500ms ease-out;
+  }
+  &.triggered {
+    .animTarget {
+      transform: scale(1);
+    }
+  }
+}
+
+#section10 {
+  lottie-player {
+    padding-left: 30px;
+  }
+  .animTarget {
+    transform: scale(0);
+    transition: transform 500ms ease-out;
+  }
+  &.triggered {
+    .animTarget {
+      transform: scale(1);
+    }
+  }
+}
+
+#section11 {
+  .animTarget {
+    transform: scale(0);
+    transition: transform 500ms ease-out;
+  }
+  &.triggered {
+    .animTarget {
+      transform: scale(1);
+    }
+  }
+}
+
+#section12 {
+  .animTarget {
+    transform: scale(0);
+    transition: transform 500ms ease-out;
+  }
+  &.triggered {
+    .animTarget {
+      transform: scale(1);
+    }
+  }
 }
 
 aside {
@@ -233,8 +428,8 @@ aside {
 
     li {
       display: flex;
-      align-items: center;
-      justify-content: center;
+      align-items: start;
+      justify-content: start;
       color: $onSurface;
       font-weight: 600;
       text-transform: capitalize;
@@ -301,6 +496,10 @@ footer {
 }
 
 @media (width < 67.5rem) {
+  #character {
+    grid-template-columns: 1fr;
+  }
+
   .stickyWrapper {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto 1fr;
@@ -332,7 +531,7 @@ footer {
     ol {
       display: flex;
       flex-direction: row;
-      justify-content: center;
+      justify-content: flex-start;
       gap: 3rem;
 
       a:first-of-type li {
@@ -352,6 +551,9 @@ footer {
 }
 
 @media (width < 59.1875rem) {
+  #character {
+    grid-template-columns: 1fr;
+  }
   aside {
     ol {
       justify-content: flex-start;

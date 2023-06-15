@@ -98,7 +98,10 @@ header.triggered h1.animTarget {
   justify-content: center;
   align-items: center;
   max-width: calc(63ch + 4rem);
-  margin: auto;
+  margin-inline: auto;
+}
+.wrapper1 .main__title {
+  padding-block: 10rem;
 }
 
 #character__title {
@@ -195,15 +198,15 @@ video {
 }
 #section-start #card1.animTarget {
   transform: translateX(-100vw);
-  transition: transform 700ms ease-in-out;
+  transition: transform 300ms ease-in-out;
 }
 #section-start #card2.animTarget {
   transform: translateX(100vw);
-  transition: transform 700ms ease-in-out;
+  transition: transform 400ms ease-in-out;
 }
 #section-start #card3.animTarget {
   transform: translateX(-100vw);
-  transition: transform 700ms ease-in-out;
+  transition: transform 600ms ease-in-out;
 }
 #section-start #card4.animTarget {
   transform: translateX(100vw);

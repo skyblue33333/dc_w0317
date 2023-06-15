@@ -125,8 +125,10 @@ header {
   max-width: calc(
     63ch + 2 * $wrapper-padding-inline
   );
-
-  margin: auto;
+  margin-inline: auto;
+  .main__title {
+    padding-block: 10rem;
+  }
 }
 
 #character__title {
@@ -225,15 +227,15 @@ video {
   background-color: $bgCha;
   #card1.animTarget {
     transform: translateX(-100vw);
-    transition: transform 700ms ease-in-out;
+    transition: transform 300ms ease-in-out;
   }
   #card2.animTarget {
     transform: translateX(100vw);
-    transition: transform 700ms ease-in-out;
+    transition: transform 400ms ease-in-out;
   }
   #card3.animTarget {
     transform: translateX(-100vw);
-    transition: transform 700ms ease-in-out;
+    transition: transform 600ms ease-in-out;
   }
   #card4.animTarget {
     transform: translateX(100vw);

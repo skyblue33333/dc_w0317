@@ -75,17 +75,20 @@ header {
   word-break: keep-all;
 }
 header h1 {
-  color: var(--txtTitle);
   font-size: 3rem;
+  position: relative;
+  width: 110%;
+  height: 20%;
+  position: absolute;
+  isolation: isolate;
+  text-align: center;
+  color: white;
 }
 header p {
   font-weight: 500;
   color: rgb(152, 152, 152);
-}
-header img {
-  width: 150%;
-  position: relative;
-  isolation: isolate;
+  text-align: center;
+  padding-bottom: 10px;
 }
 header img::after {
   content: "";
@@ -93,8 +96,8 @@ header img::after {
   z-index: -1;
 }
 header h1.animTarget {
-  transform: translateY(-100vh);
-  transition: color 500ms ease-out, transform 500ms ease-out;
+  transform: translateY(-200vh);
+  transition: color 2000ms ease-in-out, transform 700ms ease-in-out;
 }
 header.triggered h1.animTarget {
   transform: translateY(0);
@@ -273,7 +276,7 @@ video {
 }
 #section3 .content h2.animTarget {
   transform: translateX(100vw);
-  transition: transform 300ms ease-out;
+  transition: transform 400ms ease-out;
 }
 #section3 .content h3.animTarget {
   transform: translateX(-100vw);
@@ -289,11 +292,18 @@ video {
   transform: translateX(0);
 }
 
-#section4 .animTarget {
+#section4 .animTarget #anim4__1 {
   transform: scale(0);
   transition: transform 500ms ease-out;
 }
-#section4.triggered .animTarget {
+#section4 .animTarget #anim4__2 {
+  transform: scale(0);
+  transition: transform 1000ms ease-in-out;
+}
+#section4.triggered #anim4__1 {
+  transform: scale(1);
+}
+#section4.triggered #anim4__2 {
   transform: scale(1);
 }
 
@@ -359,16 +369,44 @@ video {
 
 #section9 h2.animTarget {
   transform: translateX(-100vw);
-  transition: transform 500ms ease-out;
+  transition: transform 150ms ease-in-out;
 }
-#section9 p.animTarget {
+#section9 #anim9__1 {
   transform: translateX(100vw);
-  transition: transform 500ms ease-out;
+  transition: transform 300ms ease-out;
+}
+#section9 #anim9__2 {
+  transform: translateX(100vw);
+  transition: transform 450ms ease-out;
+}
+#section9 #anim9__3 {
+  transform: translateX(100vw);
+  transition: transform 600ms ease-out;
+}
+#section9 #anim9__4 {
+  transform: translateX(100vw);
+  transition: transform 750ms ease-out;
+}
+#section9 #anim9__5 {
+  transform: translateX(100vw);
+  transition: transform 900ms ease-out;
 }
 #section9.triggered h2.animTarget {
   transform: translateX(0);
 }
-#section9.triggered p.animTarget {
+#section9.triggered #anim9__1 {
+  transform: translateX(0);
+}
+#section9.triggered #anim9__2 {
+  transform: translateX(0);
+}
+#section9.triggered #anim9__3 {
+  transform: translateX(0);
+}
+#section9.triggered #anim9__4 {
+  transform: translateX(0);
+}
+#section9.triggered #anim9__5 {
   transform: translateX(0);
 }
 

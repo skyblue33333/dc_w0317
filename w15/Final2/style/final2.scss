@@ -16,6 +16,8 @@ $onSurface: var(--onSurface);
 $accent: var(--accent);
 $bgCha: var(--bgCha);
 $bgCard: var(--bgCard);
+$txtTitle: var(--txtTitle);
+$txtCard: var(--txtCard);
 
 *,
 *::before,
@@ -32,7 +34,6 @@ html {
 }
 
 body {
-  overflow-x: hidden;
   width: 100vw;
   height: 100dvh;
   margin: 0;
@@ -41,13 +42,7 @@ body {
   font-weight: 500;
   line-height: 1.6;
   color: $txt;
-  &::after {
-    content: "";
-    height: 1px;
-    width: 100%;
-    position: fixed;
-    bottom: 200px;
-  }
+  overflow-x: hidden;
 }
 
 main {
@@ -65,19 +60,14 @@ main {
 
 .animTrigger {
   position: relative;
-  &::after {
-    content: "";
-    height: 1px;
-    width: 100%;
-    // background-color: fuchsia;
-    position: absolute;
-    top: 25%;
-  }
 }
 
 section {
   scroll-snap-align: center;
   overflow: hidden;
+  h3 {
+    color: $txtTitle;
+  }
 }
 
 .wrapper {
@@ -97,14 +87,36 @@ section {
 }
 
 .content {
-  border: 1px solid red;
+  // border: 1px solid red;
   //   block-size: 31.25rem;
+  h2 {
+    color: $bgCard;
+  }
 }
 
 header {
+  overflow-x: hidden;
   text-align: center;
   text-wrap: balance;
   word-break: keep-all;
+  h1 {
+    color: $txtTitle;
+    font-size: 3rem;
+  }
+  p {
+    font-weight: 500;
+    color: rgb(152, 152, 152);
+  }
+  img {
+    width: 150%;
+    position: relative;
+    isolation: isolate;
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+    }
+  }
   h1.animTarget {
     transform: translateY(-100vh);
     transition: color 500ms ease-out,
@@ -129,13 +141,16 @@ header {
   .main__title {
     padding-block: 10rem;
   }
+  p {
+    padding-bottom: 4rem;
+  }
 }
 
 #character__title {
   padding-block: 9rem 1rem;
   h1 {
     font-size: 2.5rem;
-    color: rgb(115, 64, 140);
+    color: $txtTitle;
   }
 }
 
@@ -147,6 +162,7 @@ header {
   row-gap: 3rem;
   margin-inline: auto;
   margin-top: 0;
+  color: $txtCard;
 }
 
 .card {
@@ -227,19 +243,19 @@ video {
   background-color: $bgCha;
   #card1.animTarget {
     transform: translateX(-100vw);
-    transition: transform 300ms ease-in-out;
+    transition: transform 500ms ease-in-out smooth;
   }
   #card2.animTarget {
     transform: translateX(100vw);
-    transition: transform 400ms ease-in-out;
+    transition: transform 600ms ease-in-out smooth;
   }
   #card3.animTarget {
     transform: translateX(-100vw);
-    transition: transform 600ms ease-in-out;
+    transition: transform 700ms ease-in-out;
   }
   #card4.animTarget {
     transform: translateX(100vw);
-    transition: transform 700ms ease-in-out;
+    transition: transform 800ms ease-in-out;
   }
   &.triggered {
     #card1.animTarget {
@@ -305,11 +321,20 @@ video {
       transform: translateX(100vw);
       transition: transform 300ms ease-out;
     }
+
+    h3.animTarget {
+      transform: translateX(-100vw);
+      transition: transform 350ms ease-out;
+    }
+
     &.triggered {
       p.animTarget {
         transform: translateX(0);
       }
       h2.animTarget {
+        transform: translateX(0);
+      }
+      h3.animTarget {
         transform: translateX(0);
       }
     }
@@ -329,13 +354,13 @@ video {
 }
 
 #section5 {
-  .content.animTarget {
-    transition: background-color 500ms ease-out,
-      border 500ms ease-out;
-  }
   h2.animTarget {
     transform: translateX(-100vw);
     transition: transform 500ms ease-out;
+  }
+  .content__img.animTarget {
+    transform: translateX(-100vw);
+    transition: transform 450ms ease-out;
   }
   p.animTarget {
     transform: translateX(100vw);
@@ -346,6 +371,9 @@ video {
       transform: translateX(0);
     }
     p.animTarget {
+      transform: translateX(0);
+    }
+    .content__img.animTarget {
       transform: translateX(0);
     }
   }
@@ -364,13 +392,27 @@ video {
 }
 
 #section7 {
-  .animTarget {
-    transform: scale(0);
+  h2.animTarget {
+    transform: translateX(-100vw);
+    transition: transform 500ms ease-out;
+  }
+  .content__img.animTarget {
+    transform: translateX(-100vw);
+    transition: transform 450ms ease-out;
+  }
+  p.animTarget {
+    transform: translateX(100vw);
     transition: transform 500ms ease-out;
   }
   &.triggered {
-    .animTarget {
-      transform: scale(1);
+    h2.animTarget {
+      transform: translateX(0);
+    }
+    p.animTarget {
+      transform: translateX(0);
+    }
+    .content__img.animTarget {
+      transform: translateX(0);
     }
   }
 }
@@ -388,13 +430,20 @@ video {
 }
 
 #section9 {
-  .animTarget {
-    transform: scale(0);
+  h2.animTarget {
+    transform: translateX(-100vw);
+    transition: transform 500ms ease-out;
+  }
+  p.animTarget {
+    transform: translateX(100vw);
     transition: transform 500ms ease-out;
   }
   &.triggered {
-    .animTarget {
-      transform: scale(1);
+    h2.animTarget {
+      transform: translateX(0);
+    }
+    p.animTarget {
+      transform: translateX(0);
     }
   }
 }
@@ -415,13 +464,27 @@ video {
 }
 
 #section11 {
-  .animTarget {
-    transform: scale(0);
+  h2.animTarget {
+    transform: translateX(-100vw);
+    transition: transform 500ms ease-out;
+  }
+  .content__img.animTarget {
+    transform: translateX(100vw);
+    transition: transform 450ms ease-out;
+  }
+  p.animTarget {
+    transform: translateX(-100vw);
     transition: transform 500ms ease-out;
   }
   &.triggered {
-    .animTarget {
-      transform: scale(1);
+    h2.animTarget {
+      transform: translateX(0);
+    }
+    p.animTarget {
+      transform: translateX(0);
+    }
+    .content__img.animTarget {
+      transform: translateX(0);
     }
   }
 }
@@ -525,24 +588,53 @@ aside {
 }
 
 footer {
-  .wrapper {
-    min-height: max(100dvh, $min-height);
+  padding-bottom: 64px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  .diagonal {
+    width: 100%;
+    padding-block: 8rem;
+    $skew-angle: -5deg;
+    $background: linear-gradient(
+      242deg in oklch,
+      oklch(75% 0.25 185) 8% -35%,
+      51%,
+      oklch(55% 0.28 189) 99% 99%
+    );
+    position: relative;
+    isolation: isolate;
+    &::after {
+      content: "";
+      background: $background;
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      transform: skewY($skew-angle);
+    }
+    // min-height: max(100dvh, $min-height);
     .button {
-      align-items: center;
-      text-align: center;
-      padding: 0.5rem 1rem;
-      border: 0.0625rem;
-      border-color: rgba(10, 197, 144, 0.751);
-      color: rgba(3, 220, 159, 0.751);
-      border-radius: 0.75rem;
-      &:hover {
-        background-color: rgba(
-          3,
-          220,
-          159,
-          0.751
-        );
+      a {
+        text-decoration: unset;
         color: white;
+      }
+      align-items: center;
+      margin: auto;
+      border: solid white;
+      width: fit-content;
+      text-align: center;
+      border-radius: 0.75rem;
+      border-width: 2px;
+      padding: 0.5rem 1rem;
+      &:hover {
+        color: rgb(33, 82, 70);
+        background-color: rgba(
+          255,
+          255,
+          255,
+          0.324
+        );
+        transition: 500ms smooth;
       }
     }
   }
@@ -554,7 +646,6 @@ footer {
   }
 
   .stickyWrapper {
-    overflow-x: hidden;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto 1fr;
   }

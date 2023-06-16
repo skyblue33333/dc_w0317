@@ -3,9 +3,11 @@
   --bgVariant: #e3f0ed;
   --txt: #1b1b1f;
   --surface-transparent: rgba(216, 230, 227, 0.6);
-  --surface: #dcd9de;
+  --surface: #e0e0e0;
   --onSurface: #1b1b1f;
   --accent: #43a89e;
-  --bgCha: #d3c8e1;
-  --bgCard: #ffffff;
+  --bgCha: #ebeaea;
+  --bgCard: #435e5a;
+  --txtTitle: #37756f;
+  --txtCard: rgb(255, 255, 255);
 }

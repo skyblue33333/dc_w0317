@@ -352,6 +352,10 @@ video {
       transform: scale(0);
       transition: transform 500ms ease-out;
     }
+    .content__img {
+      transform: scale(0);
+      transition: transform 700ms ease-out;
+    }
     #anim4__2 {
       transform: scale(0);
       transition: transform 1000ms ease-in-out;
@@ -360,6 +364,9 @@ video {
 
   &.triggered {
     #anim4__1 {
+      transform: scale(1);
+    }
+    .content__img {
       transform: scale(1);
     }
     #anim4__2 {

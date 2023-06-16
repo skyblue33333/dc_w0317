@@ -248,19 +248,19 @@ video {
   background-color: $bgCha;
   #card1.animTarget {
     transform: translateX(-100vw);
-    transition: transform 500ms ease-in-out smooth;
+    transition: transform 600ms ease-in-out smooth;
   }
   #card2.animTarget {
     transform: translateX(100vw);
-    transition: transform 600ms ease-in-out smooth;
+    transition: transform 700ms ease-in-out smooth;
   }
   #card3.animTarget {
     transform: translateX(-100vw);
-    transition: transform 700ms ease-in-out;
+    transition: transform 800ms ease-in-out;
   }
   #card4.animTarget {
     transform: translateX(100vw);
-    transition: transform 800ms ease-in-out;
+    transition: transform 900ms ease-in-out;
   }
   &.triggered {
     #card1.animTarget {

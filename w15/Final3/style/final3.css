@@ -242,40 +242,43 @@ video {
 }
 #section-start #card1.animTarget {
   transform: translateX(-100vw);
-  transition: transform 600ms ease-in-out smooth;
+  transition: transform 1200ms ease-in-out smooth;
 }
 #section-start #card2.animTarget {
   transform: translateX(100vw);
-  transition: transform 700ms ease-in-out smooth;
+  transition: transform 1400ms ease-in-out smooth;
 }
 #section-start #card3.animTarget {
   transform: translateX(-100vw);
-  transition: transform 800ms ease-in-out;
+  transition: transform 1500ms ease-in-out;
 }
 #section-start #card4.animTarget {
   transform: translateX(100vw);
-  transition: transform 900ms ease-in-out;
+  transition: transform 1700ms ease-in-out;
 }
 #section-start.triggered #card1.animTarget {
   transform: translateX(0);
-  animation: fadeIn 1s ease-out;
+  animation: fadeIn 1300ms ease-out;
 }
 #section-start.triggered #card2.animTarget {
   transform: translateX(0);
-  animation: fadeIn 1100ms ease-out;
+  animation: fadeIn 1500ms ease-out;
 }
 #section-start.triggered #card3.animTarget {
   transform: translateX(0);
-  animation: fadeIn 1200ms ease-out;
+  animation: fadeIn 1700ms ease-out;
 }
 #section-start.triggered #card4.animTarget {
   transform: translateX(0);
-  animation: fadeIn 1300ms ease-out;
+  animation: fadeIn 1800ms ease-out;
 }
 
+#section1 {
+  background-color: unset;
+}
 #section1 p.animTarget {
   transform: translateY(300vh);
-  transition: transform 1500ms ease-in-out;
+  transition: transform 1200ms ease-in-out;
 }
 #section1 .content__img.animTarget {
   transform: scale(0);
@@ -316,19 +319,23 @@ video {
   animation: wiggle 150ms linear infinite;
 }
 
-@keyframes wiggle {
-  0%, 5% {
-    transform: rotateZ(0);
-  }
-  20% {
-    transform: rotateZ(1deg);
-  }
-  40% {
-    transform: rotateZ(-1deg);
-  }
-  60%, 100% {
-    transform: rotateZ(0);
-  }
+#section3 {
+  background-color: unset;
+}
+#section3 .diagonal {
+  width: 100%;
+  padding-block: 9rem;
+  position: relative;
+  isolation: isolate;
+}
+#section3 .diagonal::after {
+  margin: 0;
+  content: "";
+  background: var(--bgVariant);
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  transform: skewY(-5deg);
 }
 #section3 .content .animTarget {
   transform: translateX(100vw);
@@ -368,6 +375,24 @@ video {
   transform: scale(1);
 }
 
+#section5 {
+  background-color: unset;
+}
+#section5 .diagonal {
+  width: 100%;
+  padding-block: 9rem;
+  position: relative;
+  isolation: isolate;
+}
+#section5 .diagonal::after {
+  margin: 0;
+  content: "";
+  background: var(--bgVariant);
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  transform: skewY(-5deg);
+}
 #section5 h2.animTarget {
   transform: translateX(-100vw);
   transition: transform 500ms ease-out;
@@ -398,6 +423,31 @@ video {
   transform: scale(1);
 }
 
+#section7 {
+  background-color: unset;
+  color: rgb(255, 255, 255);
+}
+#section7 #S7__title {
+  color: white;
+}
+#section7 #text_S7 {
+  color: rgb(193, 249, 244);
+}
+#section7 .diagonal {
+  width: 100%;
+  padding-block: 9rem;
+  position: relative;
+  isolation: isolate;
+}
+#section7 .diagonal::after {
+  margin: 0;
+  content: "";
+  background: var(--bgCard);
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  transform: skewY(-5deg);
+}
 #section7 h2.animTarget {
   transform: translateX(-100vw);
   transition: transform 500ms ease-out;
@@ -419,6 +469,9 @@ video {
 #section7.triggered .content__img.animTarget {
   transform: translateX(0);
 }
+#section7.triggered #text_S7 {
+  animation: scale1 2.5s ease-out infinite;
+}
 
 #section8 .animTarget {
   transform: scale(0);
@@ -428,6 +481,24 @@ video {
   transform: scale(1);
 }
 
+#section9 {
+  background-color: unset;
+}
+#section9 .diagonal {
+  width: 100%;
+  padding-block: 9rem;
+  position: relative;
+  isolation: isolate;
+}
+#section9 .diagonal::after {
+  margin: 0;
+  content: "";
+  background: var(--bgVariant);
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  transform: skewY(-5deg);
+}
 #section9 h2.animTarget {
   transform: translateX(-100vw);
   transition: transform 150ms ease-in-out;
@@ -482,6 +553,28 @@ video {
   transform: scale(1);
 }
 
+#section11 {
+  background-color: unset;
+}
+#section11 h2 {
+  color: white;
+}
+#section11 .diagonal {
+  color: white;
+  width: 100%;
+  padding-block: 9rem;
+  position: relative;
+  isolation: isolate;
+}
+#section11 .diagonal::after {
+  margin: 0;
+  content: "";
+  background: var(--bgCard);
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  transform: skewY(-5deg);
+}
 #section11 h2.animTarget {
   transform: translateX(-100vw);
   transition: transform 500ms ease-out;
@@ -642,6 +735,31 @@ footer .diagonal .button:hover {
   }
   100% {
     opacity: 1;
+  }
+}
+@keyframes wiggle {
+  0%, 5% {
+    transform: rotateZ(0);
+  }
+  20% {
+    transform: rotateZ(1deg);
+  }
+  40% {
+    transform: rotateZ(-1deg);
+  }
+  60%, 100% {
+    transform: rotateZ(0);
+  }
+}
+@keyframes scale1 {
+  0%, 5% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.7);
+  }
+  60%, 100% {
+    transform: scale(1);
   }
 }
 @media (width < 67.5rem) {

@@ -277,44 +277,48 @@ video {
   background-color: $bgCha;
   #card1.animTarget {
     transform: translateX(-100vw);
-    transition: transform 600ms ease-in-out smooth;
+    transition: transform 1200ms ease-in-out
+      smooth;
   }
   #card2.animTarget {
     transform: translateX(100vw);
-    transition: transform 700ms ease-in-out smooth;
+    transition: transform 1400ms ease-in-out
+      smooth;
   }
   #card3.animTarget {
     transform: translateX(-100vw);
-    transition: transform 800ms ease-in-out;
+    transition: transform 1500ms ease-in-out;
   }
   #card4.animTarget {
     transform: translateX(100vw);
-    transition: transform 900ms ease-in-out;
+    transition: transform 1700ms ease-in-out;
   }
   &.triggered {
     #card1.animTarget {
       transform: translateX(0);
-      animation: fadeIn 1s ease-out;
+      animation: fadeIn 1300ms ease-out;
     }
     #card2.animTarget {
       transform: translateX(0);
-      animation: fadeIn 1100ms ease-out;
+      animation: fadeIn 1500ms ease-out;
     }
     #card3.animTarget {
       transform: translateX(0);
-      animation: fadeIn 1200ms ease-out;
+      animation: fadeIn 1700ms ease-out;
     }
     #card4.animTarget {
       transform: translateX(0);
-      animation: fadeIn 1300ms ease-out;
+      animation: fadeIn 1800ms ease-out;
     }
   }
 }
 
 #section1 {
+  background-color: unset;
+
   p.animTarget {
     transform: translateY(300vh);
-    transition: transform 1500ms ease-in-out;
+    transition: transform 1200ms ease-in-out;
   }
   .content__img.animTarget {
     transform: scale(0);
@@ -362,23 +366,27 @@ video {
     }
   }
 }
-@keyframes wiggle {
-  0%,
-  5% {
-    transform: rotateZ(0);
-  }
-  20% {
-    transform: rotateZ(1deg);
-  }
-  40% {
-    transform: rotateZ(-1deg);
-  }
-  60%,
-  100% {
-    transform: rotateZ(0);
-  }
-}
+
 #section3 {
+  background-color: unset;
+  .diagonal {
+    width: 100%;
+    padding-block: 9rem;
+    $skew-angle: -5deg;
+    $background: $bgVariant;
+    position: relative;
+    isolation: isolate;
+    &::after {
+      margin: 0;
+      content: "";
+      background: $background;
+      // padding-inline: 25rem 25rem;
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      transform: skewY($skew-angle);
+    }
+  }
   .content {
     .animTarget {
       transform: translateX(100vw);
@@ -432,6 +440,25 @@ video {
 }
 
 #section5 {
+  background-color: unset;
+  .diagonal {
+    width: 100%;
+    padding-block: 9rem;
+    $skew-angle: -5deg;
+    $background: $bgVariant;
+    position: relative;
+    isolation: isolate;
+    &::after {
+      margin: 0;
+      content: "";
+      background: $background;
+      // padding-inline: 25rem 25rem;
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      transform: skewY($skew-angle);
+    }
+  }
   h2.animTarget {
     transform: translateX(-100vw);
     transition: transform 500ms ease-out;
@@ -470,10 +497,39 @@ video {
 }
 
 #section7 {
+  background-color: unset;
+  color: rgb(255, 255, 255);
+  #S7__title {
+    color: white;
+  }
+  #text_S7 {
+    color: rgb(193, 249, 244);
+  }
+
+  .diagonal {
+    width: 100%;
+    padding-block: 9rem;
+    $skew-angle: -5deg;
+    $background: $bgCard;
+    position: relative;
+    isolation: isolate;
+    &::after {
+      margin: 0;
+      content: "";
+      background: $background;
+      // padding-inline: 25rem 25rem;
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      transform: skewY($skew-angle);
+    }
+  }
+
   h2.animTarget {
     transform: translateX(-100vw);
     transition: transform 500ms ease-out;
   }
+
   .content__img.animTarget {
     transform: translateX(-100vw);
     transition: transform 450ms ease-out;
@@ -492,6 +548,9 @@ video {
     .content__img.animTarget {
       transform: translateX(0);
     }
+    #text_S7 {
+      animation: scale1 2.5s ease-out infinite;
+    }
   }
 }
 
@@ -508,6 +567,25 @@ video {
 }
 
 #section9 {
+  background-color: unset;
+  .diagonal {
+    width: 100%;
+    padding-block: 9rem;
+    $skew-angle: -5deg;
+    $background: $bgVariant;
+    position: relative;
+    isolation: isolate;
+    &::after {
+      margin: 0;
+      content: "";
+      background: $background;
+      // padding-inline: 25rem 25rem;
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      transform: skewY($skew-angle);
+    }
+  }
   h2.animTarget {
     transform: translateX(-100vw);
     transition: transform 150ms ease-in-out;
@@ -570,6 +648,29 @@ video {
 }
 
 #section11 {
+  background-color: unset;
+  h2 {
+    color: white;
+  }
+  .diagonal {
+    color: white;
+    width: 100%;
+    padding-block: 9rem;
+    $skew-angle: -5deg;
+    $background: $bgCard;
+    position: relative;
+    isolation: isolate;
+    &::after {
+      margin: 0;
+      content: "";
+      background: $background;
+      // padding-inline: 25rem 25rem;
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      transform: skewY($skew-angle);
+    }
+  }
   h2.animTarget {
     transform: translateX(-100vw);
     transition: transform 500ms ease-out;
@@ -757,6 +858,38 @@ footer {
   }
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes wiggle {
+  0%,
+  5% {
+    transform: rotateZ(0);
+  }
+  20% {
+    transform: rotateZ(1deg);
+  }
+  40% {
+    transform: rotateZ(-1deg);
+  }
+  60%,
+  100% {
+    transform: rotateZ(0);
+  }
+}
+
+@keyframes scale1 {
+  0%,
+  5% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.7);
+  }
+
+  60%,
+  100% {
+    transform: scale(1);
   }
 }
 

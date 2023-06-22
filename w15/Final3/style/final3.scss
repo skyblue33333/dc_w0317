@@ -113,6 +113,12 @@ header {
     font-family: "Hahmlet", serif;
     font-weight: 600;
     font-size: 80px;
+    .animTarget {
+      animation: fadeIn 3s ease;
+    }
+    &:hover {
+      color: rgb(91, 210, 170);
+    }
   }
   h5 {
     font-weight: 500;

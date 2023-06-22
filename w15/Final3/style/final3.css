@@ -89,6 +89,12 @@ header p {
   font-weight: 600;
   font-size: 80px;
 }
+header p .animTarget {
+  animation: fadeIn 3s ease;
+}
+header p:hover {
+  color: rgb(91, 210, 170);
+}
 header h5 {
   font-weight: 500;
   color: rgb(216, 216, 216);

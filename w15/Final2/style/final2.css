@@ -18,7 +18,7 @@ body {
   width: 100vw;
   height: 100dvh;
   margin: 0;
-  font-family: system-ui;
+  font-family: "Noto Sans KR", sans-serif;
   font-size: 1.0625rem;
   font-weight: 500;
   line-height: 1.6;
@@ -63,6 +63,9 @@ section h3 {
   min-height: max(800px, 100dvh);
   padding-inline: 2rem;
 }
+.wrapper h2 {
+  font-family: "Hahmlet", serif;
+}
 
 .content h2 {
   color: var(--bgCard);
@@ -74,33 +77,52 @@ header {
   text-wrap: balance;
   word-break: keep-all;
 }
-header h1 {
-  font-size: 3rem;
+header p {
   position: relative;
-  width: 110%;
+  width: 100%;
   height: 20%;
   position: absolute;
   isolation: isolate;
   text-align: center;
   color: white;
+  font-family: "Hahmlet", serif;
+  font-weight: 600;
+  font-size: 80px;
 }
-header p {
+header h5 {
   font-weight: 500;
-  color: rgb(152, 152, 152);
+  color: rgb(216, 216, 216);
   text-align: center;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
+  position: relative;
+  width: 100%;
+  bottom: 0px;
+  position: absolute;
+  isolation: isolate;
+  text-align: center;
 }
 header img::after {
   content: "";
   position: absolute;
   z-index: -1;
+  width: 100vw;
+  aspect-ratio: 16/9;
 }
-header h1.animTarget {
-  transform: translateY(-200vh);
-  transition: color 2000ms ease-in-out, transform 700ms ease-in-out;
+header p.animTarget {
+  transform: translateY(-100vh);
+  transition: transform 1500ms ease-in-out;
 }
-header.triggered h1.animTarget {
+header.triggered p.animTarget {
   transform: translateY(0);
+  animation: fadeIn 2s ease-in;
+}
+
+.wrapper_head {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-inline: auto;
 }
 
 .wrapper1 {
@@ -117,13 +139,20 @@ header.triggered h1.animTarget {
 .wrapper1 p {
   padding-bottom: 4rem;
 }
+.wrapper1 h2 {
+  font-family: "Hahmlet", serif;
+}
 
 #character__title {
   padding-block: 9rem 1rem;
 }
 #character__title h1 {
+  font-family: "Hahmlet", serif;
   font-size: 2.5rem;
   color: var(--txtTitle);
+}
+#character__title.triggered h1.animTarget {
+  animation: fadeIn 3s ease-out;
 }
 
 #character {
@@ -229,24 +258,28 @@ video {
 }
 #section-start.triggered #card1.animTarget {
   transform: translateX(0);
+  animation: fadeIn 1s ease-out;
 }
 #section-start.triggered #card2.animTarget {
   transform: translateX(0);
+  animation: fadeIn 1100ms ease-out;
 }
 #section-start.triggered #card3.animTarget {
   transform: translateX(0);
+  animation: fadeIn 1200ms ease-out;
 }
 #section-start.triggered #card4.animTarget {
   transform: translateX(0);
+  animation: fadeIn 1300ms ease-out;
 }
 
 #section1 p.animTarget {
   transform: translateY(300vh);
-  transition: transform 500ms ease-in-out;
+  transition: transform 1500ms ease-in-out;
 }
 #section1 .content__img.animTarget {
   transform: scale(0);
-  transition: transform 300ms ease-out;
+  transition: transform 500ms ease-out;
 }
 #section1 h2.animTarget {
   transform: translateX(-100vw);
@@ -254,6 +287,7 @@ video {
 }
 #section1.triggered p.animTarget {
   transform: translateY(0);
+  animation: fadeIn 2s ease;
 }
 #section1.triggered .content__img.animTarget {
   transform: scale(1);
@@ -262,6 +296,9 @@ video {
   transform: translateX(0);
 }
 
+#section2 .wiggle_text {
+  color: rgb(210, 53, 53);
+}
 #section2 .animTarget {
   transform: scale(0);
   transition: transform 500ms ease-out;
@@ -269,27 +306,43 @@ video {
 #section2.triggered .animTarget {
   transform: scale(1);
 }
+#section2.triggered #text_s21.animTarget {
+  animation: wiggle 150ms linear infinite;
+}
+#section2.triggered #text_s22.animTarget {
+  animation: wiggle 200ms linear infinite;
+}
+#section2.triggered #text_s23.animTarget {
+  animation: wiggle 150ms linear infinite;
+}
 
-#section3 .content p.animTarget {
+@keyframes wiggle {
+  0%, 5% {
+    transform: rotateZ(0);
+  }
+  20% {
+    transform: rotateZ(1deg);
+  }
+  40% {
+    transform: rotateZ(-1deg);
+  }
+  60%, 100% {
+    transform: rotateZ(0);
+  }
+}
+#section3 .content .animTarget {
   transform: translateX(100vw);
-  transition: transform 500ms ease-out;
+  transition: transform 700ms ease-out;
 }
-#section3 .content h2.animTarget {
-  transform: translateX(100vw);
-  transition: transform 400ms ease-out;
+#section3 .content #text_S3.animTarget {
+  transform: scale(0);
+  transition: transform 5s ease-out infinite;
 }
-#section3 .content h3.animTarget {
-  transform: translateX(-100vw);
-  transition: transform 350ms ease-out;
-}
-#section3 .content.triggered p.animTarget {
+#section3 .content.triggered .animTarget {
   transform: translateX(0);
 }
-#section3 .content.triggered h2.animTarget {
-  transform: translateX(0);
-}
-#section3 .content.triggered h3.animTarget {
-  transform: translateX(0);
+#section3 .content.triggered #text_S3.animTarget {
+  transform: scale(1);
 }
 
 #section4 .animTarget #anim4__1 {
@@ -297,8 +350,8 @@ video {
   transition: transform 500ms ease-out;
 }
 #section4 .animTarget .content__img {
-  transform: scale(0);
   transition: transform 700ms ease-out;
+  transform: scale(0);
 }
 #section4 .animTarget #anim4__2 {
   transform: scale(0);
@@ -309,6 +362,7 @@ video {
 }
 #section4.triggered .content__img {
   transform: scale(1);
+  animation: wiggle 70ms linear infinite;
 }
 #section4.triggered #anim4__2 {
   transform: scale(1);
@@ -450,7 +504,7 @@ video {
   transform: translateX(0);
 }
 
-#section12 .animTarget {
+#section12 p.animTarget {
   transform: scale(0);
   transition: transform 500ms ease-out;
 }
@@ -470,6 +524,7 @@ aside {
   padding-inline: 1rem 1.5rem;
   border-radius: 0 1rem 1rem 0;
   background-color: var(--surface-transparent);
+  font-family: "Hahmlet", serif;
   font-size: 0.875rem;
   -webkit-backdrop-filter: blur(0.25rem);
           backdrop-filter: blur(0.25rem);
@@ -539,6 +594,7 @@ aside a {
 }
 
 footer {
+  font-family: "Hahmlet", serif;
   padding-bottom: 64px;
   text-align: center;
   align-items: center;
@@ -570,6 +626,7 @@ footer .diagonal .button {
   padding: 0.5rem 1rem;
 }
 footer .diagonal .button a {
+  font-family: "Noto Sans KR", sans-serif;
   text-decoration: unset;
   color: white;
 }
@@ -579,6 +636,14 @@ footer .diagonal .button:hover {
   transition: 500ms smooth;
 }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @media (width < 67.5rem) {
   #character {
     grid-template-columns: 1fr;

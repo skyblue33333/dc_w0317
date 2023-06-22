@@ -37,7 +37,7 @@ body {
   width: 100vw;
   height: 100dvh;
   margin: 0;
-  font-family: system-ui;
+  font-family: "Noto Sans KR", sans-serif;
   font-size: 1.0625rem;
   font-weight: 500;
   line-height: 1.6;
@@ -84,6 +84,9 @@ section {
   min-height: max(800px, 100dvh);
   padding-inline: $wrapper-padding-inline;
   //   padding-block: $wrapper-padding-block;
+  h2 {
+    font-family: "Hahmlet", serif;
+  }
 }
 
 .content {
@@ -99,41 +102,58 @@ header {
   text-align: center;
   text-wrap: balance;
   word-break: keep-all;
-  h1 {
-    font-size: 3rem;
+  p {
     position: relative;
-    width: 110%;
+    width: 100%;
     height: 20%;
     position: absolute;
     isolation: isolate;
     text-align: center;
     color: white;
+    font-family: "Hahmlet", serif;
+    font-weight: 600;
+    font-size: 80px;
   }
-  p {
+  h5 {
     font-weight: 500;
-    color: rgb(152, 152, 152);
+    color: rgb(216, 216, 216);
     text-align: center;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
+    position: relative;
+    width: 100%;
+    bottom: 0px;
+    position: absolute;
+    isolation: isolate;
+    text-align: center;
   }
   img {
     &::after {
       content: "";
       position: absolute;
       z-index: -1;
+      width: 100vw;
+      aspect-ratio: 16/9;
     }
   }
-  h1.animTarget {
-    transform: translateY(-200vh);
-    transition: color 2000ms ease-in-out,
-      transform 700ms ease-in-out;
+  p.animTarget {
+    transform: translateY(-100vh);
+    transition: transform 1500ms ease-in-out;
   }
   &.triggered {
-    h1.animTarget {
+    p.animTarget {
       transform: translateY(0);
+      animation: fadeIn 2s ease-in;
     }
   }
 }
 
+.wrapper_head {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-inline: auto;
+}
 .wrapper1 {
   display: flex;
   flex-direction: column;
@@ -149,13 +169,22 @@ header {
   p {
     padding-bottom: 4rem;
   }
+  h2 {
+    font-family: "Hahmlet", serif;
+  }
 }
 
 #character__title {
   padding-block: 9rem 1rem;
   h1 {
+    font-family: "Hahmlet", serif;
     font-size: 2.5rem;
     color: $txtTitle;
+  }
+  &.triggered {
+    h1.animTarget {
+      animation: fadeIn 3s ease-out;
+    }
   }
 }
 
@@ -265,15 +294,19 @@ video {
   &.triggered {
     #card1.animTarget {
       transform: translateX(0);
+      animation: fadeIn 1s ease-out;
     }
     #card2.animTarget {
       transform: translateX(0);
+      animation: fadeIn 1100ms ease-out;
     }
     #card3.animTarget {
       transform: translateX(0);
+      animation: fadeIn 1200ms ease-out;
     }
     #card4.animTarget {
       transform: translateX(0);
+      animation: fadeIn 1300ms ease-out;
     }
   }
 }
@@ -281,11 +314,11 @@ video {
 #section1 {
   p.animTarget {
     transform: translateY(300vh);
-    transition: transform 500ms ease-in-out;
+    transition: transform 1500ms ease-in-out;
   }
   .content__img.animTarget {
     transform: scale(0);
-    transition: transform 300ms ease-out;
+    transition: transform 500ms ease-out;
   }
   h2.animTarget {
     transform: translateX(-100vw);
@@ -294,6 +327,7 @@ video {
   &.triggered {
     p.animTarget {
       transform: translateY(0);
+      animation: fadeIn 2s ease;
     }
     .content__img.animTarget {
       transform: scale(1);
@@ -305,6 +339,10 @@ video {
 }
 
 #section2 {
+  .wiggle_text {
+    color: rgb(210, 53, 53);
+  }
+
   .animTarget {
     transform: scale(0);
     transition: transform 500ms ease-out;
@@ -313,34 +351,51 @@ video {
     .animTarget {
       transform: scale(1);
     }
+    #text_s21.animTarget {
+      animation: wiggle 150ms linear infinite;
+    }
+    #text_s22.animTarget {
+      animation: wiggle 200ms linear infinite;
+    }
+    #text_s23.animTarget {
+      animation: wiggle 150ms linear infinite;
+    }
   }
 }
-
+@keyframes wiggle {
+  0%,
+  5% {
+    transform: rotateZ(0);
+  }
+  20% {
+    transform: rotateZ(1deg);
+  }
+  40% {
+    transform: rotateZ(-1deg);
+  }
+  60%,
+  100% {
+    transform: rotateZ(0);
+  }
+}
 #section3 {
   .content {
-    p.animTarget {
+    .animTarget {
       transform: translateX(100vw);
-      transition: transform 500ms ease-out;
-    }
-    h2.animTarget {
-      transform: translateX(100vw);
-      transition: transform 400ms ease-out;
+      transition: transform 700ms ease-out;
     }
 
-    h3.animTarget {
-      transform: translateX(-100vw);
-      transition: transform 350ms ease-out;
+    #text_S3.animTarget {
+      transform: scale(0);
+      transition: transform 5s ease-out infinite;
     }
 
     &.triggered {
-      p.animTarget {
+      .animTarget {
         transform: translateX(0);
       }
-      h2.animTarget {
-        transform: translateX(0);
-      }
-      h3.animTarget {
-        transform: translateX(0);
+      #text_S3.animTarget {
+        transform: scale(1);
       }
     }
   }
@@ -353,8 +408,8 @@ video {
       transition: transform 500ms ease-out;
     }
     .content__img {
-      transform: scale(0);
       transition: transform 700ms ease-out;
+      transform: scale(0);
     }
     #anim4__2 {
       transform: scale(0);
@@ -368,6 +423,7 @@ video {
     }
     .content__img {
       transform: scale(1);
+      animation: wiggle 70ms linear infinite;
     }
     #anim4__2 {
       transform: scale(1);
@@ -540,9 +596,11 @@ video {
 }
 
 #section12 {
-  .animTarget {
+  p.animTarget {
     transform: scale(0);
     transition: transform 500ms ease-out;
+  }
+  img.animTarget {
   }
   &.triggered {
     .animTarget {
@@ -562,6 +620,7 @@ aside {
   padding-inline: 1rem 1.5rem;
   border-radius: 0 1rem 1rem 0;
   background-color: $surface-transparent;
+  font-family: "Hahmlet", serif;
   font-size: 0.875rem;
   backdrop-filter: blur(0.25rem);
 
@@ -638,6 +697,7 @@ aside {
 }
 
 footer {
+  font-family: "Hahmlet", serif;
   padding-bottom: 64px;
   text-align: center;
   align-items: center;
@@ -665,6 +725,7 @@ footer {
     // min-height: max(100dvh, $min-height);
     .button {
       a {
+        font-family: "Noto Sans KR", sans-serif;
         text-decoration: unset;
         color: white;
       }
@@ -687,6 +748,15 @@ footer {
         transition: 500ms smooth;
       }
     }
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 

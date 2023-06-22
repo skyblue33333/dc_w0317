@@ -10,6 +10,19 @@
       rel="stylesheet"
       href="style/final2.css"
     />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@300;600&family=Noto+Sans+KR:wght@500;700&family=Roboto:wght@300;500&display=swap"
+      rel="stylesheet"
+    />
     <script
       src="script/intersectionObserver1.js"
       defer
@@ -22,22 +35,25 @@
       src="script/noHistoryScrollReactBtn.js"
       defer
     ></script>
+
     <title>W15:final</title>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
   </head>
   <body>
     <header class="animTrigger">
-      <div class="wrapper1">
+      <div class="wrapper_head">
         <img
           id="title__img"
           src="img/lightening3.jpg"
           alt=""
         />
-        <h1 class="animTarget main__title">
+        <p class="animTarget main__title">
           불협화음의 노래
-        </h1>
-        <p>| 아래로 스크롤 |</p>
+        </p>
+        <h5 class="animTarget">
+          | 아래로 스크롤 |
+        </h5>
       </div>
     </header>
     <div class="stickyWrapper">
@@ -48,9 +64,9 @@
         >
           <div
             id="character__title"
-            class="wrapper1"
+            class="wrapper1 animTrigger"
           >
-            <h1>Character</h1>
+            <h1 class="animTarget">Character</h1>
           </div>
           <div id="character" class="wrapper1">
             <div
@@ -233,17 +249,36 @@
                 듯했다. 그러나 멜로디는 다시
                 사원의 성소로 도망치는 대신 남자를
                 비난하는 군중을 보며 힘을 얻었다.
-                <br /><br />"거짓말쟁이!"
-                <br />"신성 모독자!"
-                <br />"당신에게 성서의 저주가
-                내려지길!" <br /><br />남자는
-                씁쓸하게 웃었다. "성서? 펜타킬은
-                그 성서가 온전한 것이라고 믿게
-                하겠지. 자신들이 겁을 먹고 뜯어낸
-                후 숨긴 페이지는 없다고, 이 세상의
-                모든 힘은 오직 불쾌한 주인만이
-                지니고 있다고 말이야. 다시 한번
-                말하지만 당신들은 속고 있어!"
+              </p>
+
+              <h2
+                id="text_s21"
+                class="animTarget wiggle_text"
+              >
+                "거짓말쟁이!"
+                <h2
+                  id="text_s22"
+                  class="animTarget wiggle_text"
+                >
+                  "신성 모독자!"
+                </h2>
+                <h2
+                  id="text_s23"
+                  class="animTarget wiggle_text"
+                >
+                  "당신에게 성서의 저주가
+                  내려지길!"
+                </h2>
+              </h2>
+              <p class="animTarget">
+                남자는 씁쓸하게 웃었다. "성서?
+                펜타킬은 그 성서가 온전한 것이라고
+                믿게 하겠지. 자신들이 겁을 먹고
+                뜯어낸 후 숨긴 페이지는 없다고, 이
+                세상의 모든 힘은 오직 불쾌한
+                주인만이 지니고 있다고 말이야.
+                다시 한번 말하지만 당신들은 속고
+                있어!"
               </p>
             </div>
           </div>
@@ -251,7 +286,9 @@
         <section id="section3">
           <div class="wrapper">
             <div class="content animTrigger">
-              <h2 class="animTarget">page3</h2>
+              <h2 class="animTarget page_title">
+                page3
+              </h2>
               <p class="animTarget">
                 모여 있는 사람들 사이에서 충격과
                 의심으로 웅성대는 소리가 퍼지며
@@ -288,11 +325,11 @@
                 지긋지긋한 성상의 발치에서 허리를
                 굽히고 몸을 문댈 생각 따위 없어.
               </p>
-              <h3 class="animTarget">
+              <h2 class="animTarget" id="text_S3">
                 난 더 진실한, 숭배할 가치가 있는
                 힘에만 답하지. 바로 불협화음을
                 내는 자 말이야!"
-              </h3>
+              </h2>
               <p class="animTarget">
                 킬마스터의 표정이 굳었다.
                 킬마스터는 아까와 달리 낮게 깔린
@@ -384,17 +421,17 @@
                 때리기 시작했다. 망치가 계속해서
                 올라갔다가 떨어졌다. 멜로디는 그
                 소리에 움찔하며 고개를 돌릴 수밖에
-                없었다. <br /><br />비에고는 축
-                늘어진 몸으로 거리마다 끌려다니며
-                온갖 모욕과 쓰레기 세례를 받았다.
-                이 폭력적인 행진이 끝나자 도시
-                관문이 활짝 열렸다. 비에고는 그
-                너머에 있는 먼지 더미 속으로
-                내던져졌다. <br /><br />멜로디는
-                킬마스터가 지나가며 자신의 어깨를
-                부드럽게 만지는 것을 느꼈다. "가
-                보려무나, 얘야. 이건 너처럼 독실한
-                신자가 볼만한 광경이 아니야."
+                없었다. <br />비에고는 축 늘어진
+                몸으로 거리마다 끌려다니며 온갖
+                모욕과 쓰레기 세례를 받았다. 이
+                폭력적인 행진이 끝나자 도시 관문이
+                활짝 열렸다. 비에고는 그 너머에
+                있는 먼지 더미 속으로 내던져졌다.
+                <br /><br />멜로디는 킬마스터가
+                지나가며 자신의 어깨를 부드럽게
+                만지는 것을 느꼈다. "가 보려무나,
+                얘야. 이건 너처럼 독실한 신자가
+                볼만한 광경이 아니야."
                 <br /><br />하지만 멜로디는 움직일
                 수 없었다. 공포 때문에 꼼짝도 할
                 수 없었다. 그리고... 뭔가 다른 게
@@ -748,7 +785,6 @@
                 쓰는 것에 집중하며 이런 초라한
                 일에서도 다시 음악을 만들 수
                 있다는 것에 만족했다.
-                <br /><br />
               </p>
               <p id="anim9__2" class="animTarget">
                 몇 주 동안 도시를 돌아다녔지만
@@ -771,19 +807,18 @@
                 했다.
               </p>
               <p id="anim9__3" class="animTarget">
-                <br /><br />하지만 사원 안으로
-                돌아온 멜로디는 어딘가 숨겨져
-                있다고 확신하게 된 무언가를
-                찾아다니며 남몰래 은밀히 움직였다.
-                멜로디가 찾는 것은 바로 성서의
-                사라진 장. 금지된 신이었다.
+                하지만 사원 안으로 돌아온 멜로디는
+                어딘가 숨겨져 있다고 확신하게 된
+                무언가를 찾아다니며 남몰래 은밀히
+                움직였다. 멜로디가 찾는 것은 바로
+                성서의 사라진 장. 금지된 신이었다.
                 멜로디는 반드시 답을 찾아낼
-                셈이었다. <br /><br />일은
-                멜로디가 바라던 대로 흘러갔다.
-                멜로디를 추궁하며 호되게 혼내던
-                축성자 킬마스터는 마침내 화를
-                누그러뜨리고 멜로디를 다시
-                사원으로 받아들였다.
+                셈이었다.
+                <br /><br />일은 멜로디가 바라던
+                대로 흘러갔다. 멜로디를 추궁하며
+                호되게 혼내던 축성자 킬마스터는
+                마침내 화를 누그러뜨리고 멜로디를
+                다시 사원으로 받아들였다.
               </p>
 
               <p id="anim9__4" class="animTarget">

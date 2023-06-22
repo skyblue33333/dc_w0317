@@ -395,15 +395,16 @@ video {
 
     #text_S3.animTarget {
       transform: scale(0);
-      transition: transform 5s ease-out infinite;
     }
 
     &.triggered {
       .animTarget {
         transform: translateX(0);
+        animation: fadeIn 2s ease-out;
       }
       #text_S3.animTarget {
         transform: scale(1);
+        animation: fadeIn 2s ease-out;
       }
     }
   }
@@ -461,25 +462,28 @@ video {
   }
   h2.animTarget {
     transform: translateX(-100vw);
-    transition: transform 500ms ease-out;
+    transition: transform 1s ease-out;
   }
   .content__img.animTarget {
     transform: translateX(-100vw);
-    transition: transform 450ms ease-out;
+    transition: transform 3s ease-out;
   }
   p.animTarget {
     transform: translateX(100vw);
-    transition: transform 500ms ease-out;
+    transition: transform 1s ease-out;
   }
   &.triggered {
     h2.animTarget {
       transform: translateX(0);
+      animation: fadeIn 1.5s ease-out;
     }
     p.animTarget {
       transform: translateX(0);
+      animation: fadeIn 1.5s ease-out;
     }
     .content__img.animTarget {
       transform: translateX(0);
+      animation: fadeIn 1.5s ease-out;
     }
   }
 }
@@ -588,7 +592,7 @@ video {
   }
   h2.animTarget {
     transform: translateX(-100vw);
-    transition: transform 150ms ease-in-out;
+    transition: transform 300ms ease-in-out;
   }
   #anim9__1 {
     transform: translateX(100vw);
@@ -613,21 +617,27 @@ video {
   &.triggered {
     h2.animTarget {
       transform: translateX(0);
+      animation: fadeIn 1s ease-out;
     }
     #anim9__1 {
       transform: translateX(0);
+      animation: fadeIn 1400ms ease-out;
     }
     #anim9__2 {
       transform: translateX(0);
+      animation: fadeIn 1800ms ease-out;
     }
     #anim9__3 {
       transform: translateX(0);
+      animation: fadeIn 2200ms ease-out;
     }
     #anim9__4 {
       transform: translateX(0);
+      animation: fadeIn 2600ms ease-out;
     }
     #anim9__5 {
       transform: translateX(0);
+      animation: fadeIn 3s ease-out;
     }
   }
 }
@@ -673,25 +683,28 @@ video {
   }
   h2.animTarget {
     transform: translateX(-100vw);
-    transition: transform 500ms ease-out;
+    transition: transform 700ms ease-out;
   }
   .content__img.animTarget {
     transform: translateX(100vw);
-    transition: transform 450ms ease-out;
+    transition: transform 500ms ease-out;
   }
   p.animTarget {
     transform: translateX(-100vw);
-    transition: transform 500ms ease-out;
+    transition: transform 700ms ease-out;
   }
   &.triggered {
     h2.animTarget {
       transform: translateX(0);
+      animation: fadeIn 2s ease-out;
     }
     p.animTarget {
       transform: translateX(0);
+      animation: fadeIn 2s ease-out;
     }
     .content__img.animTarget {
       transform: translateX(0);
+      animation: fadeIn 4s ease-out;
     }
   }
 }
@@ -701,11 +714,13 @@ video {
     transform: scale(0);
     transition: transform 500ms ease-out;
   }
-  img.animTarget {
-  }
+
   &.triggered {
     .animTarget {
       transform: scale(1);
+    }
+    img.animTarget {
+      animation: fadeIn 7s ease-out;
     }
   }
 }

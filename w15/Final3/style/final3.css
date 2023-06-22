@@ -343,13 +343,14 @@ video {
 }
 #section3 .content #text_S3.animTarget {
   transform: scale(0);
-  transition: transform 5s ease-out infinite;
 }
 #section3 .content.triggered .animTarget {
   transform: translateX(0);
+  animation: fadeIn 2s ease-out;
 }
 #section3 .content.triggered #text_S3.animTarget {
   transform: scale(1);
+  animation: fadeIn 2s ease-out;
 }
 
 #section4 .animTarget #anim4__1 {
@@ -395,24 +396,27 @@ video {
 }
 #section5 h2.animTarget {
   transform: translateX(-100vw);
-  transition: transform 500ms ease-out;
+  transition: transform 1s ease-out;
 }
 #section5 .content__img.animTarget {
   transform: translateX(-100vw);
-  transition: transform 450ms ease-out;
+  transition: transform 3s ease-out;
 }
 #section5 p.animTarget {
   transform: translateX(100vw);
-  transition: transform 500ms ease-out;
+  transition: transform 1s ease-out;
 }
 #section5.triggered h2.animTarget {
   transform: translateX(0);
+  animation: fadeIn 1.5s ease-out;
 }
 #section5.triggered p.animTarget {
   transform: translateX(0);
+  animation: fadeIn 1.5s ease-out;
 }
 #section5.triggered .content__img.animTarget {
   transform: translateX(0);
+  animation: fadeIn 1.5s ease-out;
 }
 
 #section6 .animTarget {
@@ -501,7 +505,7 @@ video {
 }
 #section9 h2.animTarget {
   transform: translateX(-100vw);
-  transition: transform 150ms ease-in-out;
+  transition: transform 300ms ease-in-out;
 }
 #section9 #anim9__1 {
   transform: translateX(100vw);
@@ -525,21 +529,27 @@ video {
 }
 #section9.triggered h2.animTarget {
   transform: translateX(0);
+  animation: fadeIn 1s ease-out;
 }
 #section9.triggered #anim9__1 {
   transform: translateX(0);
+  animation: fadeIn 1400ms ease-out;
 }
 #section9.triggered #anim9__2 {
   transform: translateX(0);
+  animation: fadeIn 1800ms ease-out;
 }
 #section9.triggered #anim9__3 {
   transform: translateX(0);
+  animation: fadeIn 2200ms ease-out;
 }
 #section9.triggered #anim9__4 {
   transform: translateX(0);
+  animation: fadeIn 2600ms ease-out;
 }
 #section9.triggered #anim9__5 {
   transform: translateX(0);
+  animation: fadeIn 3s ease-out;
 }
 
 #section10 lottie-player {
@@ -577,24 +587,27 @@ video {
 }
 #section11 h2.animTarget {
   transform: translateX(-100vw);
-  transition: transform 500ms ease-out;
+  transition: transform 700ms ease-out;
 }
 #section11 .content__img.animTarget {
   transform: translateX(100vw);
-  transition: transform 450ms ease-out;
+  transition: transform 500ms ease-out;
 }
 #section11 p.animTarget {
   transform: translateX(-100vw);
-  transition: transform 500ms ease-out;
+  transition: transform 700ms ease-out;
 }
 #section11.triggered h2.animTarget {
   transform: translateX(0);
+  animation: fadeIn 2s ease-out;
 }
 #section11.triggered p.animTarget {
   transform: translateX(0);
+  animation: fadeIn 2s ease-out;
 }
 #section11.triggered .content__img.animTarget {
   transform: translateX(0);
+  animation: fadeIn 4s ease-out;
 }
 
 #section12 p.animTarget {
@@ -603,6 +616,9 @@ video {
 }
 #section12.triggered .animTarget {
   transform: scale(1);
+}
+#section12.triggered img.animTarget {
+  animation: fadeIn 7s ease-out;
 }
 
 aside {
